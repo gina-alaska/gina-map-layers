@@ -1,3 +1,6 @@
+//= require_self
+//= require_tree ./layers
+
 (function() {
   var global = this;
   
