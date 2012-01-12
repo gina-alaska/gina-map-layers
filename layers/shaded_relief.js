@@ -6,7 +6,7 @@
 Gina.Layers.define('TILE.EPSG:3857.SHADED_RELIEF', {
   name: 'Shaded Relief',
   type: Gina.Layers.Types.TILE,
-  url: 'http://swmha.gina.alaska.edu/tilesrv/shaded_relief_ned/tile/',
+  url: 'http://swmha.gina.alaska.edu/tilesrv/shaded_relief_ned/tile/${x}/${y}/${z}',
   layerOptions: {
     type: 'jpeg',
     transitionEffect: 'resize',
@@ -24,7 +24,7 @@ Gina.Layers.define('TILE.EPSG:3857.SHADED_RELIEF', {
 Gina.Layers.define('TILE.EPSG:3338.SHADED_RELIEF', {
   name: 'Shaded Relief',
   type: Gina.Layers.Types.TILE,
-  url: 'http://tiles.proto.gina.alaska.edu/tiles/aea_gina_bathymetry_aa/tile/',
+  url: 'http://tiles.proto.gina.alaska.edu/tiles/aea_gina_bathymetry_aa/tile/${x}/${y}/${z}',
   layerOptions: {
     type: 'jpeg',
     transitionEffect: 'resize',

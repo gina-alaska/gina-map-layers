@@ -16,7 +16,7 @@ Gina.Layers.define('TILE.EPSG:3338.TOPO', {
 Gina.Layers.define('TILE.EPSG:3857.TOPO', {
   name: 'Topographic DRG',
   type: Gina.Layers.Types.TILE, 
-  url: 'http://swmha.gina.alaska.edu/tilesrv/drg/tile/',
+  url: 'http://swmha.gina.alaska.edu/tilesrv/drg/tile/${x}/${y}/${z}',
   layerOptions: {
     type: 'jpeg',
     transitionEffect: 'resize',
