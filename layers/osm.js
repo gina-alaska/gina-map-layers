@@ -12,7 +12,8 @@ Gina.Layers.define('TILE.EPSG:3338.OSM', {
     transitionEffect: 'resize',
     wrapDateLine: false,
     visibility: true,
-    isBaseLayer: true
+    isBaseLayer: true,
+    attribution: '(c) <a href="http://www.openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>'
   }
 });
 
@@ -30,6 +31,7 @@ Gina.Layers.define('TILE.EPSG:3338.OSM_OVERLAY', {
     transitionEffect: 'resize',
     wrapDateLine: false,
     visibility: true,
-    isBaseLayer: false
+    isBaseLayer: false,
+    attribution: '(c) <a href="http://www.openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>'
   }
 });
