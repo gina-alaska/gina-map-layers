@@ -58,6 +58,18 @@
       layer[components[last]] = params;
       
       return layer;
+    },
+    
+    exists: function(name) {
+      return Gina.Layers.get(name) !== null;
+    },
+    
+    inject: function(map, layers){
+      for(var ii = 0; ii < layers.length; ii++) {
+        if(Gina.Layers.exists(layers[ii])) {
+          map.addLayer(Gina.Layers.get(layers[ii]));          
+        }
+      }
     }
   };
 })();
