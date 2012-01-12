@@ -9,7 +9,7 @@
   }
   Gina.global = global;
   
-  Gina.layerBuilders = {};
+  Gina.layerHandlers = {};
   
   Gina.Layers = {
     Types: { TILE: 'tile', WMS: 'wms' },
@@ -30,8 +30,8 @@
       }
       
       /* If layer def has a type then run it through the layer builder */
-      if(layer && layer.type && Gina.layerBuilders[layer.type]) {
-        return (Gina.layerBuilders[layer.type])(layer);
+      if(layer && layer.type && Gina.layerHandlers[layer.type]) {
+        return (Gina.layerHandlers[layer.type])(layer);
       } else {
         return layer;        
       }
@@ -67,7 +67,7 @@
     inject: function(map, layers){
       for(var ii = 0; ii < layers.length; ii++) {
         if(Gina.Layers.exists(layers[ii])) {
-          map.addLayer(Gina.Layers.get(layers[ii]));          
+          Gina.layerHandlers.inject(map, Gina.Layers.get(layers[ii]));         
         }
       }
     }
