@@ -9,6 +9,15 @@
   }
   Gina.global = global;
   
+  Gina.Projections = {
+    define: function(name, options){
+      Gina.Projections[name] = options;
+    },
+    get: function(name) {
+      return Gina.Projections[name];
+    }
+  }
+  
   Gina.layerHandlers = {};
   
   Gina.Layers = {
