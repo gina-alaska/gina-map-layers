@@ -8,7 +8,8 @@ Gina.Layers.define('TILE.EPSG:3338.BDL', {
     transitionEffect: 'resize',
     wrapDateLine: false,
     visibility: true,
-    isBaseLayer: true
+    isBaseLayer: true,
+    wmsId: 'WMS.BDL'
   }
 });
 
@@ -22,7 +23,8 @@ Gina.Layers.define('TILE.EPSG:3572.BDL', {
     transitionEffect: 'resize',
     wrapDateLine: false,
     visibility: true,
-    isBaseLayer: true
+    isBaseLayer: true,
+    wmsId: 'WMS.BDL'
   }
 });
 
@@ -36,16 +38,18 @@ Gina.Layers.define('TILE.EPSG:3857.BDL', {
     transitionEffect: 'resize',
     wrapDateLine: true,
     visibility: true,
-    isBaseLayer: true
+    isBaseLayer: true,
+    wmsId: 'WMS.BDL'
   }
 });
 
 Gina.Layers.define('WMS.BDL', {
   name: 'Best Data Layer',
   type: Gina.Layers.Types.WMS, 
-  url: 'http://wms.alaskamapped.org/cgi-bin/bdl.cgi?',
+  url: 'http://wms.alaskamapped.org/bdl',
   wmsOptions: {
-    layers: "bdl_low_full,bdl_low_overview,bdl_mid_res_overview,bdl_mid_res_full,bdl_high_res_full,bdl_high_res_overview",
+    //layers: "bdl_low_full,bdl_low_overview,bdl_mid_res_overview,bdl_mid_res_full,bdl_high_res_full,bdl_high_res_overview",
+    layers: "BestDataAvailableLayer",
     transparent: false
   },
   layerOptions: {

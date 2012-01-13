@@ -8,7 +8,8 @@ Gina.Layers.define('TILE.EPSG:3338.TOPO', {
     transitionEffect: 'resize',
     wrapDateLine: false,
     visibility: true,
-    isBaseLayer: true
+    isBaseLayer: true,
+    wmsId: "WMS.TOPO"
   }
 });
 
@@ -22,6 +23,21 @@ Gina.Layers.define('TILE.EPSG:3857.TOPO', {
     transitionEffect: 'resize',
     wrapDateLine: false,
     visibility: true,
+    isBaseLayer: true,
+    wmsId: "WMS.TOPO"
+  }
+});
+
+Gina.Layers.define('WMS.TOPO', {
+  name: 'Topographic DRG',
+  type: Gina.Layers.Types.WMS,
+  url: 'http://no.gina.alaska.edu/extras',
+  wmsOptions: {
+    layers: "Hill Shaded DRG",
+    transparent: false
+  },
+  layerOptions: {
+    wrapDateLine: false,
     isBaseLayer: true
   }
 });

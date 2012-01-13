@@ -26,7 +26,7 @@
     /**
     * Get the map layer object, create it if needed
     **/
-    get: function(name){
+    get: function(name, raw){
       var components = name.split('.'), index;
       var layer = Gina.Layers;
       var item;
@@ -39,7 +39,7 @@
       }
       
       /* If layer def has a type then run it through the layer builder */
-      if(layer && layer.type && Gina.layerHandlers[layer.type]) {
+      if(!raw && layer && layer.type && Gina.layerHandlers[layer.type]) {
         return (Gina.layerHandlers[layer.type])(layer);
       } else {
         return layer;        

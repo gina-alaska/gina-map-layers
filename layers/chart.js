@@ -12,6 +12,22 @@ Gina.Layers.define('TILE.EPSG:3857.CHARTS', {
     transitionEffect: 'resize',
     wrapDateLine: false,
     visibility: true,
+    isBaseLayer: true,
+    wmsId: "WMS.CHARTS"
+  }
+});
+
+
+Gina.Layers.define('WMS.CHARTS', {
+  name: 'NOAA Charts',
+  type: Gina.Layers.Types.WMS,
+  url: 'http://wms.alaskamapped.org/charts',
+  wmsOptions: {
+    layers: "NOAA_Charts",
+    transparent: false
+  },
+  layerOptions: {
+    wrapDateLine: false,
     isBaseLayer: true
   }
 });
