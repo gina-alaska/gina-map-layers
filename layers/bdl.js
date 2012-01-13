@@ -16,7 +16,7 @@ Gina.Layers.define('TILE.EPSG:3338.BDL', {
 Gina.Layers.define('TILE.EPSG:3572.BDL', {
   name: 'Best Data Layer',
   type: Gina.Layers.Types.TILE, 
-  url: 'http://tiles.proto.gina.alaska.edu/test/tilesrv/bdl_polar/tile/${x}/${y}/${z}',
+  url: 'http://tiles.gina.alaska.edu/test/tilesrv/bdl_polar/tile/${x}/${y}/${z}',
   layerOptions: {
     type: 'jpeg',
     transitionEffect: 'resize',
@@ -34,7 +34,7 @@ Gina.Layers.define('TILE.EPSG:3857.BDL', {
   layerOptions: {
     type: 'jpeg',
     transitionEffect: 'resize',
-    wrapDateLine: false,
+    wrapDateLine: true,
     visibility: true,
     isBaseLayer: true
   }

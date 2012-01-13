@@ -24,7 +24,7 @@ Gina.Layers.define('TILE.EPSG:3857.SHADED_RELIEF', {
 Gina.Layers.define('TILE.EPSG:3338.SHADED_RELIEF', {
   name: 'Shaded Relief + Bathymetry',
   type: Gina.Layers.Types.TILE,
-  url: 'http://tiles.proto.gina.alaska.edu/tiles/aea_gina_bathymetry_aa/tile/${x}/${y}/${z}',
+  url: 'http://tiles.gina.alaska.edu/tiles/aea_gina_bathymetry_aa/tile/${x}/${y}/${z}',
   layerOptions: {
     type: 'jpeg',
     transitionEffect: 'resize',

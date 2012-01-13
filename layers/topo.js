@@ -2,7 +2,7 @@
 Gina.Layers.define('TILE.EPSG:3338.TOPO', {
   name: 'Topographic DRG',
   type: Gina.Layers.Types.TILE, 
-  url: 'http://tiles.proto.gina.alaska.edu/tilesrv/drg_shaded_aa/tile/${x}/${y}/${z}',
+  url: 'http://tiles.gina.alaska.edu/tilesrv/drg_shaded_aa/tile/${x}/${y}/${z}',
   layerOptions: {
     type: 'jpeg',
     transitionEffect: 'resize',
