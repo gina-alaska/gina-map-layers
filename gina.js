@@ -76,7 +76,7 @@
     inject: function(map, layers){
       for(var ii = 0; ii < layers.length; ii++) {
         if(Gina.Layers.exists(layers[ii])) {
-          Gina.layerHandlers.inject(map, Gina.Layers.get(layers[ii]));         
+          Gina.layerHandlers.inject(map, Gina.Layers.get(layers[ii]), layers[ii]);         
         }
       }
     }
