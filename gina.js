@@ -54,6 +54,29 @@
       }
     },
     
+    getNames: function(wild) {
+      var components = wild.split('.'), index;
+      var layer = Gina.Layers;
+      var item, path = [];
+      var layerNames = [];
+      
+      for(index = 0; index < components.length; index++) {
+        item = components[index];
+        
+        if(Gina.Layers.isWildcard(item)) { 
+          var baseName = path.join('.');
+          for(var name in layer) {
+            layerNames.push(baseName + '.' + name);            
+          }
+        } else {
+          path.push(item);
+        }
+        layer = layer[item];
+      }
+      
+      return layerNames;
+    },
+    
     /**
     * Define the layer for later use, does not instantiate the apporpriate map layer object
     **/
@@ -81,12 +104,32 @@
       return Gina.Layers.get(name) !== null;
     },
     
-    inject: function(map, layers){
-      for(var ii = 0; ii < layers.length; ii++) {
-        if(Gina.Layers.exists(layers[ii])) {
-          Gina.layerHandlers.inject(map, Gina.Layers.get(layers[ii]), layers[ii]);         
-        }
+    isWildcard: function(name) {
+      var re = /\*$/;
+      return name.match(re);
+    },
+    
+    inject: function(map, layer_names){
+      if(Gina.isString(layer_names)) {
+        layer_names = [layer_names];
       }
+      for(var ii = 0; ii < layer_names.length; ii++) {
+        if (Gina.Layers.isWildcard(layer_names[ii])) {
+          Gina.Layers.inject(map, Gina.Layers.getNames(layer_names[ii]));
+        } else {
+          Gina.Layers.inject_layer(map, layer_names[ii]);
+        }  
+      }
+    },
+    
+    inject_layer: function(map, id) {
+      if(Gina.Layers.exists(id)) {
+        Gina.layerHandlers.inject(map, Gina.Layers.get(id), id);
+      }               
+    },
+    
+    inject_each: function(map, layers) {
+
     }
   };
 })();
