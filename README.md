@@ -28,3 +28,19 @@ Include the builder for you desired web api,
   OpenLayers: 
 
     <script src="gina-map-layers/builders/openlayers.js" type="text/javascript"></script>
+    
+Inject the layers into your map object
+
+  OpenLayers:
+
+    <script type="text/javascript" charset="utf-8">
+      var map;
+      function initialize() {
+        map = new OpenLayers.Map("map");
+
+        Gina.Layers.inject(map, 'TILE.EPSG:3857.*');
+
+        map.addControl(new OpenLayers.Control.LayerSwitcher());
+        map.zoomToMaxExtent();        
+      }
+    </script>
