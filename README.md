@@ -3,7 +3,6 @@ GINA Map Layers Javascript Library
 
 This project is a library used to inject GINA Map layers into various web map apis.
 
-
 Supported Web Map APIs
 ----------------------
 
@@ -44,3 +43,8 @@ Inject the layers into your map object
         map.zoomToMaxExtent();        
       }
     </script>
+
+License
+-------
+
+See LICENSE file for licensing and credits.  Think BSD/MIT.
