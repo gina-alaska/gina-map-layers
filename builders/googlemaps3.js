@@ -1,6 +1,14 @@
 Gina.layerHandlers = {
   inject: function(map, layer, id) {
-    map.mapTypes.set(id, layer);
+    if(id) {
+      if(Gina.Layers.get(id, true).layerOptions.isBaseLayer) {
+        map.mapTypes.set(id, layer);      
+      } else if(Gina.Layers.get(id, true).layerOptions.visibility) {
+        map.overlayMapTypes.insertAt(0, layer);                    
+      }      
+    } else {
+      map.overlayMapTypes.insertAt(0, layer);      
+    }
   },
   tile: function(params) {
     params.getTileUrl = function(coord, zoom) {
