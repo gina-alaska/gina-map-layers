@@ -33,8 +33,8 @@ class Build < Thor
       layers = ""    
       each_layer { |file| layers += File.read(file) }
       
-      create_file "gina-#{builder}-debug.js", file_header + File.read('gina.js') + layers + File.read("builders/#{builder}.js")
-      create_file "gina-#{builder}.js", Uglifier.compile(File.read("gina-#{builder}-debug.js"))
+      create_file "debug/gina-#{builder}.js", file_header + File.read('gina.js') + layers + File.read("builders/#{builder}.js")
+      create_file "gina-#{builder}.js", Uglifier.compile(File.read("debug/gina-#{builder}.js"))
     end
      
     def each_layer(&block)

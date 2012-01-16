@@ -32,6 +32,7 @@ Include the base library and layer definitions for your desired web api,
 
     <script src="gina-map-layers/gina-bingmaps7.js" type="text/javascript"></script>
     
+    
 Inject the layers into your map object
 --------------------------------------
 
