@@ -3,7 +3,6 @@ GINA Map Layers Javascript Library
 
 This project is a library used to inject GINA Map layers into various web map apis.
 
-
 Supported Web Map APIs
 ----------------------
 
@@ -99,3 +98,9 @@ Available Tile Layers
     TILE.EPSG:3572.BDL              GINA Best Data Layer
     TILE.EPSG:3572.OSM              OpenStreetMaps Base Layer
     TILE.EPSG:3572.OSM_OVERLAY      OpenStreetMaps Roads & Cities (Overlay)
+
+
+License
+-------
+
+See LICENSE file for licensing and credits.  Think BSD/MIT.
