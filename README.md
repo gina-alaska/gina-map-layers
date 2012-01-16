@@ -12,40 +12,43 @@ Supported Web Map APIs
 * Bing Maps 6.3, 7.0
 
 
-Usage
------
+Include the library
+-------------------
 
-Include the base library and layer definitions to the html of your website
-
-    <script src="gina-map-layers/gina.js" type="text/javascript"></script>
-    <script src="gina-map-layers/layers/bdl.js" type="text/javascript"></script>
-    <script src="gina-map-layers/layers/chart.js" type="text/javascript"></script>
-    <script src="gina-map-layers/layers/landsat.js" type="text/javascript"></script>
-    <script src="gina-map-layers/layers/osm.js" type="text/javascript"></script>
-    <script src="gina-map-layers/layers/shaded_relief.js" type="text/javascript"></script>
-    <script src="gina-map-layers/layers/topo.js" type="text/javascript"></script>
-    
-Include the builder for you desired web api,
+Include the base library and layer definitions for your desired web api,
 
   OpenLayers: 
 
-    <script src="gina-map-layers/builders/openlayers.js" type="text/javascript"></script>
+    <script src="gina-map-layers/gina-openlayers.js" type="text/javascript"></script>
     
   Google Maps: 
 
-    <script src="gina-map-layers/builders/googlemaps3.js" type="text/javascript"></script>
+    <script src="gina-map-layers/gina-googlemaps3.js" type="text/javascript"></script>
   
   Bing Maps 6.3
   
-    <script src="gina-map-layers/builders/bingmaps63.js" type="text/javascript"></script>
+    <script src="gina-map-layers/gina-bingmaps63.js" type="text/javascript"></script>
     
   Bing Maps 7.0
 
-    <script src="gina-map-layers/builders/bingmaps7.js" type="text/javascript"></script>
+    <script src="gina-map-layers/gina-bingmaps7.js" type="text/javascript"></script>
     
 Inject the layers into your map object
+--------------------------------------
 
-  OpenLayers:
+  This will inject the Spherical Mercator tile projection into your map object  
+  
+    Gina.Layers.inject(map, 'TILE.EPSG:3857.BDL');
+  
+  You can also inject multiple layers by providing an array with each layer to add
+  
+    Gina.Layers.inject(map, ['TILE.EPSG:3857.BDL', 'TILE.EPSG:3857.OSM']);
+    
+  Limited wildcard support is also available, include all tiles for the spherical mercator projection
+  
+    Gina.Layers.inject(map, 'TILE.EPSG:3857.*');
+
+  OpenLayers Example:
 
     <script type="text/javascript" charset="utf-8">
       var map;
