@@ -1,5 +1,8 @@
-//= require_self
-//= require_tree ./layers
+/**
+ * Geographic Information Network of Alaska
+ * GINA Web Layers Javascript Library
+ * @author Will Fisher
+ **/
 
 (function() {
   var global = this;
@@ -48,7 +51,7 @@
       
       /* If layer def has a type then run it through the layer builder */
       if(!raw && layer && layer.type && Gina.layerHandlers[layer.type]) {
-        return (Gina.layerHandlers[layer.type])(layer);
+        return (Gina.layerHandlers[layer.type])(layer, name);
       } else {
         return layer;        
       }
@@ -113,23 +116,30 @@
       if(Gina.isString(layer_names)) {
         layer_names = [layer_names];
       }
-      for(var ii = 0; ii < layer_names.length; ii++) {
-        if (Gina.Layers.isWildcard(layer_names[ii])) {
-          Gina.Layers.inject(map, Gina.Layers.getNames(layer_names[ii]));
+      
+      if(Gina.isArray(layer_names)) {
+        Gina.Layers.injectEachLayer(map, layer_names);
+      } else {
+        Gina.Layers.injectLayer(map, layer_names);
+      }
+    },
+    
+    injectEachLayer: function(map, layers) {
+      for(var ii = 0; ii < layers.length; ii++) {
+        if (Gina.isString(layers[ii]) && Gina.Layers.isWildcard(layers[ii])) {
+          Gina.Layers.inject(map, Gina.Layers.getNames(layers[ii]));
         } else {
-          Gina.Layers.inject_layer(map, layer_names[ii]);
+          Gina.Layers.injectLayer(map, layers[ii]);
         }  
       }
     },
     
-    inject_layer: function(map, id) {
-      if(Gina.Layers.exists(id)) {
-        Gina.layerHandlers.inject(map, Gina.Layers.get(id), id);
-      }               
-    },
-    
-    inject_each: function(map, layers) {
-
+    injectLayer: function(map, layer) {
+      if(Gina.isString(layer) && Gina.Layers.exists(layer)) {
+        Gina.layerHandlers.inject(map, Gina.Layers.get(layer), layer);
+      } else {
+        Gina.layerHandlers.inject(map, layer);
+      }
     }
   };
 })();
