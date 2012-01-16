@@ -15,12 +15,10 @@ class Build < Thor
     layers = ""    
     each_layer { |file| layers += File.read(file) }
     
-    create_file 'gina-all.js', file_header + File.read('gina.js') + layers;
-    create_file 'gina-all-openlayers.js', file_header + File.read('gina.js') + layers + File.read('builders/openlayers.js')
-    create_file 'gina-all-googlemaps.js', file_header + File.read('gina.js') + layers + File.read('builders/googlemaps3.js')
-    create_file 'gina-all-bingmaps63.js', file_header + File.read('gina.js') + layers + File.read('builders/bingmaps63.js')
-    create_file 'gina-all.bingmaps7js', file_header + File.read('gina.js') + layers + File.read('builders/bingmaps7.js')
-    
+    create_file 'gina-openlayers.js', file_header + File.read('gina.js') + layers + File.read('builders/openlayers.js')
+    create_file 'gina-googlemaps.js', file_header + File.read('gina.js') + layers + File.read('builders/googlemaps3.js')
+    create_file 'gina-bingmaps63.js', file_header + File.read('gina.js') + layers + File.read('builders/bingmaps63.js')
+    create_file 'gina-bingmaps7.js', file_header + File.read('gina.js') + layers + File.read('builders/bingmaps7.js')
   end
 
   no_tasks do 

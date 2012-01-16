@@ -6,8 +6,6 @@ Gina.layerHandlers = {
   
   tile: function(params, id) {
     var getTilePath = function(tile) {
-      console.log(tile);
-      
       var url = params.url;
       url = url.replace('${x}', tile.x);
       url = url.replace('${y}', tile.y);
