@@ -7,7 +7,9 @@ This project is a library used to inject GINA Map layers into various web map ap
 Supported Web Map APIs
 ----------------------
 
-* OpenLayers v2.11
+* OpenLayers 2.11
+* Google Maps 3
+* Bing Maps 6.3, 7.0
 
 
 Usage
@@ -29,6 +31,18 @@ Include the builder for you desired web api,
 
     <script src="gina-map-layers/builders/openlayers.js" type="text/javascript"></script>
     
+  Google Maps: 
+
+    <script src="gina-map-layers/builders/googlemaps3.js" type="text/javascript"></script>
+  
+  Bing Maps 6.3
+  
+    <script src="gina-map-layers/builders/bingmaps63.js" type="text/javascript"></script>
+    
+  Bing Maps 7.0
+
+    <script src="gina-map-layers/builders/bingmaps7.js" type="text/javascript"></script>
+    
 Inject the layers into your map object
 
   OpenLayers:
@@ -38,9 +52,47 @@ Inject the layers into your map object
       function initialize() {
         map = new OpenLayers.Map("map");
 
+        /* Inject all spherical mercator tile layers into the map */
         Gina.Layers.inject(map, 'TILE.EPSG:3857.*');
 
         map.addControl(new OpenLayers.Control.LayerSwitcher());
         map.zoomToMaxExtent();        
       }
     </script>
+    
+Available Tile Layers
+---------------------
+
+  Projection EPSG:3857 - Spherical Mercator (Google, Bing, OpenLayers)
+
+    Layer ID                        Name
+    ------------------------------  ---------------------------------
+    TILE.EPSG:3857.BDL              GINA Best Data Layer
+    TILE.EPSG:3857.TOPO             USGS Topographic DRG
+    TILE.EPSG:3857.CHARTS           NOAA Nautical Charts DRG
+    TILE.EPSG:3857.SHADED_RELIEF    GINA Shaded Relief (NED)
+    TILE.EPSG:3857.LANDSAT_PAN      Panchromatic Landsat
+    TILE.EPSG:3857.SDMI_ORTHO_RGB   SDMI Ortho Project Natural Color (Overlay)
+    TILE.EPSG:3857.SDMI_ORTHO_CIR   SDMI Ortho Project Color Infrared (Overlay)
+    TILE.EPSG:3857.SDMI_ORTHO_GS    SDMI Ortho Project Grayscale (Overlay)
+    
+  Projection EPSG:3338 - Alaskan Albers (OpenLayers)
+
+    Layer ID                        Name
+    ------------------------------  ---------------------------------
+    TILE.EPSG:3338.BDL              GINA Best Data Layer
+    TILE.EPSG:3338.TOPO             USGS Topographic DRG
+    TILE.EPSG:3338.SHADED_RELIEF    GINA Shaded Relief (NED)
+    TILE.EPSG:3338.OSM              OpenStreetMaps Base Layer
+    TILE.EPSG:3338.OSM_OVERLAY      OpenStreetMaps Roads & Cities (Overlay)
+    TILE.EPSG:3338.SDMI_ORTHO_RGB   SDMI Ortho Project Natural Color (Overlay)
+    TILE.EPSG:3338.SDMI_ORTHO_CIR   SDMI Ortho Project Color Infrared (Overlay)
+    TILE.EPSG:3338.SDMI_ORTHO_GS    SDMI Ortho Project Grayscale (Overlay)
+    
+  Projection EPSG:3572 - Alaskan Centric Polar Projection (OpenLayers)
+
+    Layer ID                        Name
+    ------------------------------  ---------------------------------
+    TILE.EPSG:3572.BDL              GINA Best Data Layer
+    TILE.EPSG:3572.OSM              OpenStreetMaps Base Layer
+    TILE.EPSG:3572.OSM_OVERLAY      OpenStreetMaps Roads & Cities (Overlay)
