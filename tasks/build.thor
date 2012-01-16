@@ -1,3 +1,9 @@
+require "rubygems"
+require "bundler/setup"
+
+# require your gems as usual
+require "uglifier"
+
 class Build < Thor
   include Thor::Actions
   include Thor::Shell
@@ -12,16 +18,25 @@ class Build < Thor
   
   desc 'gina', 'Build various gina-all.js files'
   def gina
-    layers = ""    
-    each_layer { |file| layers += File.read(file) }
-    
-    create_file 'gina-openlayers.js', file_header + File.read('gina.js') + layers + File.read('builders/openlayers.js')
-    create_file 'gina-googlemaps3.js', file_header + File.read('gina.js') + layers + File.read('builders/googlemaps3.js')
-    create_file 'gina-bingmaps63.js', file_header + File.read('gina.js') + layers + File.read('builders/bingmaps63.js')
-    create_file 'gina-bingmaps7.js', file_header + File.read('gina.js') + layers + File.read('builders/bingmaps7.js')
+    build_blob('openlayers')
+    build_blob('googlemaps3')
+    build_blob('bingmaps63')
+    build_blob('bingmaps7')
+  end
+  
+  def self.source_root
+    File.join(File.dirname(__FILE__), '..')
   end
 
-  no_tasks do 
+  no_tasks do
+    def build_blob(builder)
+      layers = ""    
+      each_layer { |file| layers += File.read(file) }
+      
+      create_file "gina-#{builder}-debug.js", file_header + File.read('gina.js') + layers + File.read("builders/#{builder}.js")
+      create_file "gina-#{builder}.js", Uglifier.compile(File.read("gina-#{builder}-debug.js"))
+    end
+     
     def each_layer(&block)
       path = File.join(File.dirname(__FILE__), '../layers')
       
