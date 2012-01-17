@@ -57,7 +57,7 @@
       }
     },
     
-    getNames: function(wild) {
+    getIDs: function(wild) {
       var components = wild.split('.'), index;
       var layer = Gina.Layers;
       var item, path = [];
@@ -127,7 +127,7 @@
     injectEachLayer: function(map, layers) {
       for(var ii = 0; ii < layers.length; ii++) {
         if (Gina.isString(layers[ii]) && Gina.Layers.isWildcard(layers[ii])) {
-          Gina.Layers.inject(map, Gina.Layers.getNames(layers[ii]));
+          Gina.Layers.inject(map, Gina.Layers.getIDs(layers[ii]));
         } else {
           Gina.Layers.injectLayer(map, layers[ii]);
         }  
