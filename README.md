@@ -9,7 +9,7 @@ Supported Web Map APIs
 * OpenLayers 2.11
 * Google Maps 3
 * Bing Maps 6.3, 7.0
-
+* ArcGIS JS API 2.6
 
 Include the library
 -------------------
@@ -31,6 +31,10 @@ Include the base library and layer definitions for your desired web api,
   Bing Maps 7.0
 
     <script src="gina-map-layers/gina-bingmaps7.js" type="text/javascript"></script>
+ 
+  ArcGIS JS API 2.6 
+
+    <script src="gina-map-layers/gina-arcgis26.js" type="text/javascript"></script>
     
     
 Inject the layers into your map object
