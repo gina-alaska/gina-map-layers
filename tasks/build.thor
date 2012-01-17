@@ -22,6 +22,7 @@ class Build < Thor
     build_blob('googlemaps3')
     build_blob('bingmaps63')
     build_blob('bingmaps7')
+    build_blob('arcgis26')
   end
   
   def self.source_root
