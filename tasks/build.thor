@@ -18,11 +18,19 @@ class Build < Thor
   
   desc 'gina', 'Build various gina-all.js files'
   def gina
-    build_blob('openlayers')
-    build_blob('googlemaps3')
-    build_blob('bingmaps63')
-    build_blob('bingmaps7')
-    build_blob('arcgis26')
+    build_gina_blob('openlayers')
+    build_gina_blob('googlemaps3')
+    build_gina_blob('bingmaps63')
+    build_gina_blob('bingmaps7')
+    build_gina_blob('arcgis26')
+  end
+  
+  desc 'projections', 'Build all.js for projections'
+  def projections
+    output = ""    
+    each_projection { |file| output += File.read(file) }
+    
+    create_file 'projections/all.js', file_header + output     
   end
   
   def self.source_root
@@ -30,12 +38,21 @@ class Build < Thor
   end
 
   no_tasks do
-    def build_blob(builder)
+    def build_gina_blob(builder)
       layers = ""    
       each_layer { |file| layers += File.read(file) }
       
       create_file "debug/gina-#{builder}.js", file_header + File.read('gina.js') + layers + File.read("builders/#{builder}.js")
       create_file "gina-#{builder}.js", Uglifier.compile(File.read("debug/gina-#{builder}.js"))
+    end
+    
+    def each_projection(&block)
+      path = File.join(File.dirname(__FILE__), '../projections')
+      
+      Dir.glob(File.join(path, '*.js')).each do |file|
+        next if file =~ /all.js$/
+        yield file
+      end
     end
      
     def each_layer(&block)
