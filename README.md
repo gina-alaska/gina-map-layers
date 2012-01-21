@@ -36,8 +36,7 @@ Include the base library and layer definitions for your desired web api,
  
   ArcGIS JS API 2.6 
 
-    <script src="gina-map-layers/gina-arcgis26.js" type="text/javascript"></script>
-    
+    <script src="gina-map-layers/gina-arcgis26.js" type="text/javascript"></script>    
     
 Inject the layers into your map object
 --------------------------------------
@@ -68,6 +67,18 @@ Inject the layers into your map object
         map.zoomToMaxExtent();        
       }
     </script>
+    
+Getting a layer object
+----------------------
+
+  It is possible to get an object for a specific layer calling the Gina.Layers.get method,
+    
+  Example getting a reference to the BDL layer:
+  
+    // Fetch the BDL tile layer object
+    var bdl = Gina.Layers.get('TILE.EPSG:3857.BDL');
+    // Now manually at the layer to the map
+    map.addLayer(bdl);
     
 Available Tile Layers
 ---------------------
