@@ -12,6 +12,7 @@ Gina.Layers.define('TILE.EPSG:3857.LANDSAT_PAN', {
     transitionEffect: 'resize',
     wrapDateLine: false,
     visibility: true,
-    isBaseLayer: true
+    isBaseLayer: true,
+    sphericalMercator: true
   }
 });

@@ -13,6 +13,7 @@ Gina.Layers.define('TILE.EPSG:3857.CHARTS', {
     wrapDateLine: false,
     visibility: true,
     isBaseLayer: true,
+    sphericalMercator: true,
     wmsId: "WMS.CHARTS"
   }
 });
