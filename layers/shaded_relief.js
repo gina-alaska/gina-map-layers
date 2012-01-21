@@ -12,7 +12,8 @@ Gina.Layers.define('TILE.EPSG:3857.SHADED_RELIEF', {
     transitionEffect: 'resize',
     wrapDateLine: false,
     visibility: true,
-    isBaseLayer: true
+    isBaseLayer: true,
+    sphericalMercator: true
   }
 });
 
