@@ -12,7 +12,8 @@ Gina.Layers.define('TILE.EPSG:3857.SDMI_ORTHO_RGB', {
     transitionEffect: 'resize',
     wrapDateLine: false,
     visibility: false,
-    isBaseLayer: false
+    isBaseLayer: false,
+    sphericalMercator: true
   }
 });
 
@@ -30,7 +31,8 @@ Gina.Layers.define('TILE.EPSG:3857.SDMI_ORTHO_CIR', {
     transitionEffect: 'resize',
     wrapDateLine: false,
     visibility: false,
-    isBaseLayer: false
+    isBaseLayer: false,
+    sphericalMercator: true
   }
 });
 
@@ -48,7 +50,8 @@ Gina.Layers.define('TILE.EPSG:3857.SDMI_ORTHO_GS', {
     transitionEffect: 'resize',
     wrapDateLine: false,
     visibility: false,
-    isBaseLayer: false
+    isBaseLayer: false,
+    sphericalMercator: true
   }
 });
 
