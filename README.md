@@ -2,6 +2,7 @@ GINA Map Layers Javascript Library
 ==================================
 
 This project is a library used to inject GINA Map layers into various web map apis.
+
 Examples can be found at http://github.com/gina-alaska/gina-map-layers-examples
 
 Supported Web Map APIs
