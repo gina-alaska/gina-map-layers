@@ -10,7 +10,7 @@
   if(typeof Gina === 'undefined') {
     global.Gina = {
       "isArray": ('isArray' in Array) ? Array.isArray : function(value) {
-        return toString.call(value) === '[object Array]';
+        return Object.prototype.toString.call(value) === '[object Array]';
       },
       "isString": function(value) {
         return ((typeof value) === 'string');
