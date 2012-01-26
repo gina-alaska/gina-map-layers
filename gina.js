@@ -13,7 +13,7 @@
         return toString.call(value) === '[object Array]';
       },
       "isString": function(value) {
-        return typeof value === 'string';
+        return ((typeof value) === 'string');
       }
     };
   }
@@ -27,7 +27,7 @@
     get: function(name) {
       return Gina.Projections[name];
     }
-  }
+  };
   
   Gina.layerHandlers = {};
   

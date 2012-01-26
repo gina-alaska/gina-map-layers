@@ -21,7 +21,8 @@ Gina.layerHandlers = {
       url = url.replace('${z}', zoom);
       
       return url + '.png';
-    }
+    };
+    
     params.alt = params.name;
     params.minZoom = 1;
     params.maxZoom = 21;
