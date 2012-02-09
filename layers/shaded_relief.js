@@ -6,7 +6,7 @@
 Gina.Layers.define('TILE.EPSG:3857.SHADED_RELIEF', {
   name: 'Shaded Relief',
   type: Gina.Layers.Types.TILE,
-  url: 'http://swmha.gina.alaska.edu/tilesrv/shaded_relief_ned/tile/${x}/${y}/${z}',
+  url: 'http://tiles.gina.alaska.edu/tilesrv/shaded_relief_ned/tile/${x}/${y}/${z}',
   layerOptions: {
     type: 'jpeg',
     transitionEffect: 'resize',

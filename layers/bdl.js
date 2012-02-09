@@ -2,7 +2,7 @@
 Gina.Layers.define('TILE.EPSG:3338.BDL', {
   name: 'Best Data Layer',
   type: Gina.Layers.Types.TILE, 
-  url: 'http://swmha.gina.alaska.edu/tilesrv/bdl_esri_test/tile/${x}/${y}/${z}',
+  url: 'http://tiles.gina.alaska.edu/tilesrv/bdl_aa/tile/${x}/${y}/${z}',
   layerOptions: {
     type: 'jpeg',
     transitionEffect: 'resize',
@@ -17,7 +17,7 @@ Gina.Layers.define('TILE.EPSG:3338.BDL', {
 Gina.Layers.define('TILE.EPSG:3572.BDL', {
   name: 'Best Data Layer',
   type: Gina.Layers.Types.TILE, 
-  url: 'http://tiles.gina.alaska.edu/test/tilesrv/bdl_3572/tile/${x}/${y}/${z}',
+  url: 'http://tiles.gina.alaska.edu/tilesrv/bdl_3572/tile/${x}/${y}/${z}',
   layerOptions: {
     type: 'jpeg',
     transitionEffect: 'resize',
@@ -32,7 +32,7 @@ Gina.Layers.define('TILE.EPSG:3572.BDL', {
 Gina.Layers.define('TILE.EPSG:3857.BDL', {
   name: 'Best Data Layer',
   type: Gina.Layers.Types.TILE, 
-  url: 'http://swmha.gina.alaska.edu/tilesrv/bdl/tile/${x}/${y}/${z}',
+  url: 'http://tiles.gina.alaska.edu/tilesrv/bdl/tile/${x}/${y}/${z}',
   layerOptions: {
     type: 'jpeg',
     transitionEffect: 'resize',

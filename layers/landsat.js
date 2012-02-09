@@ -6,7 +6,7 @@
 Gina.Layers.define('TILE.EPSG:3857.LANDSAT_PAN', {
   name: 'Landsat - Panchromatic',
   type: Gina.Layers.Types.TILE,
-  url: 'http://swmha.gina.alaska.edu/tilesrv/landsat_pan/tile/${x}/${y}/${z}',
+  url: 'http://tiles.gina.alaska.edu/tilesrv/landsat_pan/tile/${x}/${y}/${z}',
   layerOptions: {
     type: 'jpeg',
     transitionEffect: 'resize',
