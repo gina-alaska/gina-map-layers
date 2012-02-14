@@ -11,3 +11,19 @@ Gina.layerHandlers = {
     );
   }
 };
+
+Gina.Projections.build = function(epsg) {
+  var config = Gina.Projections.get('EPSG:3857');
+  if(config) {
+    var from = new OpenLayers.Projection(config.projection);
+    var to = new OpenLayers.Projection(epsg);
+
+    config.projection = epsg;
+    config.maxExtent.transform(from, to);
+    config.maxResolution = (config.maxExtent.getSize().w * 2 / 256.0);  
+    
+    return config;        
+  }
+  
+  return null;
+};

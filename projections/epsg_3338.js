@@ -5,7 +5,7 @@ Gina.Projections.define('EPSG:3338', {
     'TILE.EPSG:3338.SDMI_ORTHO_RGB','TILE.EPSG:3338.SDMI_ORTHO_CIR','TILE.EPSG:3338.SDMI_ORTHO_GS'
   ],
   maxExtent: new OpenLayers.Bounds(-3500000, -3500000, 3500000, 3500000),
-  maxResolution: (3500000 * 2.0 / 256.0),
+  maxResolution: 27343.75, /* (3500000 * 2.0 / 256.0) */
   units: 'm',
   projection: "EPSG:3338"
 });
