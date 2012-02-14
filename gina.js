@@ -27,11 +27,12 @@
     get: function(name) {
       if(Gina.Projections[name]) {
         return Gina.Projections[name];        
-      } else if(Gina.Projection.build) {
-        return Gina.Projections.build(name);
       } else {
-        return false;
+        return Gina.Projections.build(name);
       }
+    },
+    build: function(name) {
+      return false;
     }
   };
   
