@@ -92,9 +92,9 @@ Available Tile Layers
     TILE.EPSG:3857.CHARTS           NOAA Nautical Charts DRG
     TILE.EPSG:3857.SHADED_RELIEF    GINA Shaded Relief (NED)
     TILE.EPSG:3857.LANDSAT_PAN      Panchromatic Landsat
-    TILE.EPSG:3857.SDMI_ORTHO_RGB   SDMI Ortho Project Natural Color (Overlay)
-    TILE.EPSG:3857.SDMI_ORTHO_CIR   SDMI Ortho Project Color Infrared (Overlay)
-    TILE.EPSG:3857.SDMI_ORTHO_GS    SDMI Ortho Project Grayscale (Overlay)
+    TILE.EPSG:3857.ORTHO_RGB        Alaska Ortho Project Natural Color (Overlay)
+    TILE.EPSG:3857.ORTHO_CIR        Alaska Ortho Project Color Infrared (Overlay)
+    TILE.EPSG:3857.ORTHO_GS         Alaska Ortho Project Grayscale (Overlay)
     
   Projection EPSG:3338 - Alaskan Albers (OpenLayers)
 
@@ -105,9 +105,9 @@ Available Tile Layers
     TILE.EPSG:3338.SHADED_RELIEF    GINA Shaded Relief (NED)
     TILE.EPSG:3338.OSM              OpenStreetMaps Base Layer
     TILE.EPSG:3338.OSM_OVERLAY      OpenStreetMaps Roads & Cities (Overlay)
-    TILE.EPSG:3338.SDMI_ORTHO_RGB   SDMI Ortho Project Natural Color (Overlay)
-    TILE.EPSG:3338.SDMI_ORTHO_CIR   SDMI Ortho Project Color Infrared (Overlay)
-    TILE.EPSG:3338.SDMI_ORTHO_GS    SDMI Ortho Project Grayscale (Overlay)
+    TILE.EPSG:3338.ORTHO_RGB        Alaska Ortho Project Natural Color (Overlay)
+    TILE.EPSG:3338.ORTHO_CIR        Alaska Ortho Project Color Infrared (Overlay)
+    TILE.EPSG:3338.ORTHO_GS         Alaska Ortho Project Grayscale (Overlay)
     
   Projection EPSG:3572 - Alaskan Centric Polar Projection (OpenLayers)
 
