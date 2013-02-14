@@ -58,7 +58,7 @@ Gina.Layers.define('WMS.BDL', {
     transparent: false
   },
   layerOptions: {
-    wrapDateLine: false,
+    wrapDateLine: true,
     isBaseLayer: true
   }
 });
