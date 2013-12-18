@@ -19,7 +19,6 @@
   }
   Gina.global = global;
   
-  
   Gina.Projections = {
     define: function(name, options){
       Gina.Projections[name] = options;
@@ -42,9 +41,18 @@
     Types: { TILE: 'tile', WMS: 'wms' },
     
     /**
+    * Cache of layer objects
+    **/
+    cache: {},
+    
+    /**
     * Get the map layer object, create it if needed
     **/
     get: function(name, raw){
+      if (!raw && Gina.Layers.cache[name]) {
+        console.log('cached!');
+        return Gina.Layers.cache[name];
+      }
       var components = name.split('.'), index;
       var layer = Gina.Layers;
       var item;
@@ -58,7 +66,7 @@
       
       /* If layer def has a type then run it through the layer builder */
       if(!raw && layer && layer.type && Gina.layerHandlers[layer.type]) {
-        return (Gina.layerHandlers[layer.type])(layer, name);
+        return Gina.Layers.cache[name] = (Gina.layerHandlers[layer.type])(layer, name);
       } else {
         return layer;        
       }
@@ -111,7 +119,7 @@
     },
     
     exists: function(name) {
-      return Gina.Layers.get(name) !== null;
+      return Gina.Layers[name] !== null;
     },
     
     isWildcard: function(name) {
@@ -129,6 +137,26 @@
       } else {
         Gina.Layers.injectLayer(map, layer_names);
       }
+    },
+    
+    find: function(names) {
+      var layers = [];
+      
+      if (Gina.isString(names)) {
+        if (Gina.Layers.isWildcard(names)) {
+          names = Gina.Layers.getIDs(names);
+        } else {
+          names = [names];
+        }
+      }
+      
+      for(var ii=0; ii< names.length; ii++) {
+        if(Gina.Layers.exists(names[ii])) {
+          layers.push(Gina.Layers.get(names[ii]))
+        }
+      }
+            
+      return layers;
     },
     
     injectEachLayer: function(map, layers) {
