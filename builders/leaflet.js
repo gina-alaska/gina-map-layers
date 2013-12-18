@@ -1,10 +1,9 @@
 Gina.layerHandlers = {
   inject: function(map, layer) {
-    return map.addLayer(layer);
+    return map.addLayer(layer, true);
   },
   tile: function(params) {
-    var url = params.url
-    url.replace("${x}", "{x}").replace("${y}", "{y}").replace("${z}", "{z}");
+    var url = params.url.replace("${x}", "{x}").replace("${y}", "{y}").replace("${z}", "{z}");
     return L.tileLayer(url, params.layerOptions);
   },
   wms: function(params) {
