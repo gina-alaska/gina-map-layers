@@ -23,6 +23,7 @@ class Build < Thor
     build_gina_blob('bingmaps63')
     build_gina_blob('bingmaps7')
     build_gina_blob('arcgis26')
+    build_gina_blob('leaflet')
   end
   
   desc 'projections', 'Build all.js for projections'
@@ -42,8 +43,8 @@ class Build < Thor
       layers = ""    
       each_layer { |file| layers += File.read(file) }
       
-      create_file "debug/gina-#{builder}.js", file_header + File.read('gina.js') + layers + File.read("builders/#{builder}.js")
-      create_file "gina-#{builder}.js", Uglifier.compile(File.read("debug/gina-#{builder}.js"))
+      create_file "adapters/#{builder}.js", file_header + File.read('src/gina.js') + layers + File.read("builders/#{builder}.js")
+      create_file "adapters/#{builder}.min.js", Uglifier.compile(File.read("adapters/#{builder}.js"))
     end
     
     def each_projection(&block)
