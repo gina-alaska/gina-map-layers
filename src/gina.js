@@ -50,7 +50,6 @@
     **/
     get: function(name, raw){
       if (!raw && Gina.Layers.cache[name]) {
-        console.log('cached!');
         return Gina.Layers.cache[name];
       }
       var components = name.split('.'), index;
@@ -65,10 +64,18 @@
       }
       
       /* If layer def has a type then run it through the layer builder */
-      if(!raw && layer && layer.type && Gina.layerHandlers[layer.type]) {
-        return Gina.Layers.cache[name] = (Gina.layerHandlers[layer.type])(layer, name);
-      } else {
+      Gina.Layers.build(layer);
+      
+      if(raw) {
         return layer;        
+      } else {
+        return layer.instance;
+      }
+    },
+    
+    build: function(def) {
+      if(def && !def.instance) {
+        def.instance = (Gina.layerHandlers[def.type])(def, name);            
       }
     },
     
@@ -139,7 +146,7 @@
       }
     },
     
-    find: function(names) {
+    find: function(names, raw) {
       var layers = [];
       
       if (Gina.isString(names)) {
@@ -150,10 +157,8 @@
         }
       }
       
-      for(var ii=0; ii< names.length; ii++) {
-        if(Gina.Layers.exists(names[ii])) {
-          layers.push(Gina.Layers.get(names[ii]))
-        }
+      for(var ii=0; ii<names.length; ii++) {
+        layers.push(Gina.Layers.get(names[ii], raw));
       }
             
       return layers;
