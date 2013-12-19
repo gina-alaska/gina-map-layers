@@ -12,48 +12,55 @@ Supported Web Map APIs
 * Google Maps 3
 * Bing Maps 6.3, 7.0
 * ArcGIS JS API 2.6
+* Leaflet 0.6+
 
-Include the library
+Include the adapter for your map library
 -------------------
 
-Include the base library and layer definitions for your desired web api,
+The adapter file includes the base library and layer definitions for the specified map api.
+
+  Leaflet
+
+    <script src="gina-map-layers/adapters/leaflet.js" type="text/javascript"></script>   
 
   OpenLayers: 
 
-    <script src="gina-map-layers/gina-openlayers.js" type="text/javascript"></script>
+    <script src="gina-map-layers/adapters/openlayers.js" type="text/javascript"></script>
     
   Google Maps: 
 
-    <script src="gina-map-layers/gina-googlemaps3.js" type="text/javascript"></script>
+    <script src="gina-map-layers/adapters/googlemaps3.js" type="text/javascript"></script>
   
   Bing Maps 6.3
   
-    <script src="gina-map-layers/gina-bingmaps63.js" type="text/javascript"></script>
+    <script src="gina-map-layers/adapters/bingmaps63.js" type="text/javascript"></script>
     
   Bing Maps 7.0
 
-    <script src="gina-map-layers/gina-bingmaps7.js" type="text/javascript"></script>
+    <script src="gina-map-layers/adapters/bingmaps7.js" type="text/javascript"></script>
  
   ArcGIS JS API 2.6 
 
-    <script src="gina-map-layers/gina-arcgis26.js" type="text/javascript"></script>    
-    
-Inject the layers into your map object
+    <script src="gina-map-layers/adapters/arcgis26.js" type="text/javascript"></script>
+
+Adding layers into your map object
 --------------------------------------
 
-  This will inject the Spherical Mercator tile projection into your map object  
+Using the Gina.Layers.inject method you can add one or more layers to a map object at the same time:
+
+This will inject the Spherical Mercator tile projection into your map object  
   
     Gina.Layers.inject(map, 'TILE.EPSG:3857.BDL');
   
-  You can also inject multiple layers by providing an array with each layer to add
+You can also inject multiple layers by providing an array with each layer to add
   
     Gina.Layers.inject(map, ['TILE.EPSG:3857.BDL', 'TILE.EPSG:3857.OSM']);
     
-  Limited wildcard support is also available, include all tiles for the spherical mercator projection
+Limited wildcard support is also available, include all tiles for the spherical mercator projection
   
     Gina.Layers.inject(map, 'TILE.EPSG:3857.*');
 
-  OpenLayers Example:
+OpenLayers Example:
 
     <script type="text/javascript" charset="utf-8">
       var map;
@@ -79,6 +86,12 @@ Getting a layer object
     var bdl = Gina.Layers.get('TILE.EPSG:3857.BDL');
     // Now manually at the layer to the map
     map.addLayer(bdl);
+    
+  To find multiple layer objects you can also use the find method
+  
+    // Find all the layer objects for EPSG:3857 (Spherical Mercator)
+    var layers =  Gina.Layers.find('TILE.EPSG:3857.*');
+    
     
 Available Tile Layers
 ---------------------
