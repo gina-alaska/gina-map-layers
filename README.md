@@ -14,6 +14,21 @@ Supported Web Map APIs
 * ArcGIS JS API 2.6
 * Leaflet 0.6+
 
+Downloading the library
+-----------------------
+
+Using bower:
+
+    bower install https://github.com/gina-alaska/gina-map-layers.git
+    
+Download zip:
+
+    https://github.com/gina-alaska/gina-map-layers/releases/tag/1.0.2
+    
+Clone from github
+
+    git clone https://github.com/gina-alaska/gina-map-layers.git
+
 Include the adapter for your map library
 -------------------
 
