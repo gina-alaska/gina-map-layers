@@ -74,6 +74,13 @@ You can also inject multiple layers by providing an array with each layer to add
 Limited wildcard support is also available, include all tiles for the spherical mercator projection
   
     Gina.Layers.inject(map, 'TILE.EPSG:3857.*');
+    
+Leaflet Example:
+  
+    <script type="text/javascript" charset="utf-8">
+        var map = L.map('map').setView([64.8595627003585, -147.84934364372472], 4)
+        map.addLayer(Gina.Layers.get('TILE.EPSG:3857.BDL'));
+    </script>
 
 OpenLayers Example:
 
