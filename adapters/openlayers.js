@@ -78,9 +78,8 @@
     },
     
     build: function(def) {
-      if(def && !def.instance) {
-        def.instance = (Gina.layerHandlers[def.type])(def, name);            
-      }
+      // remove caching for now since it isn't compatabile with turbolinks (leaflet issue)
+      def.instance = (Gina.layerHandlers[def.type])(def, name);            
     },
     
     getIDs: function(wild) {
