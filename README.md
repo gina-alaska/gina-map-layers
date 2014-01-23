@@ -120,16 +120,23 @@ Available Tile Layers
 
   Projection EPSG:3857 - Spherical Mercator (Google, Bing, OpenLayers)
 
-    Layer ID                        Name
-    ------------------------------  ---------------------------------
-    TILE.EPSG:3857.BDL              GINA Best Data Layer
-    TILE.EPSG:3857.TOPO             USGS Topographic DRG
-    TILE.EPSG:3857.CHARTS           NOAA Nautical Charts DRG
-    TILE.EPSG:3857.SHADED_RELIEF    GINA Shaded Relief (NED)
-    TILE.EPSG:3857.LANDSAT_PAN      Panchromatic Landsat
-    TILE.EPSG:3857.ORTHO_RGB        Alaska Ortho Project Natural Color (Overlay)
-    TILE.EPSG:3857.ORTHO_CIR        Alaska Ortho Project Color Infrared (Overlay)
-    TILE.EPSG:3857.ORTHO_GS         Alaska Ortho Project Grayscale (Overlay)
+    Layer ID                          Name
+    ------------------------------    ---------------------------------
+    TILE.EPSG:3857.BDL                GINA Best Data Layer
+    TILE.EPSG:3857.TOPO               USGS Topographic DRG
+    TILE.EPSG:3857.CHARTS             NOAA Nautical Charts DRG
+    TILE.EPSG:3857.SHADED_RELIEF      GINA Shaded Relief (NED)
+    TILE.EPSG:3857.LANDSAT_PAN        Panchromatic Landsat
+    TILE.EPSG:3857.ORTHO_RGB          Alaska Ortho Project Natural Color (Overlay)
+    TILE.EPSG:3857.ORTHO_CIR          Alaska Ortho Project Color Infrared (Overlay)
+    TILE.EPSG:3857.ORTHO_GS           Alaska Ortho Project Grayscale (Overlay)
+    TILE.EPSG:3857.OWM_CLOUDS         OpenWeatherMap Clouds
+    TILE.EPSG:3857.OWM_PRECIP         OpenWeatherMap Precipitation
+    TILE.EPSG:3857.OWM_SNOW           OpenWeatherMap Snow
+    TILE.EPSG:3857.OWM_TEMP           OpenWeatherMap Temperature
+    TILE.EPSG:3857.OWM_WIND           OpenWeatherMap Wind Speed
+    TILE.EPSG:3857.OWM_PRESSURE       OpenWeatherMap Pressure
+    TILE.EPSG:3857.OWM_PRESSURE_CNTR  OpenWeatherMap Pressure Contours
     
   Projection EPSG:3338 - Alaskan Albers (OpenLayers)
 
@@ -151,6 +158,12 @@ Available Tile Layers
     TILE.EPSG:3572.BDL              GINA Best Data Layer
     TILE.EPSG:3572.OSM              OpenStreetMaps Base Layer
     TILE.EPSG:3572.OSM_OVERLAY      OpenStreetMaps Roads & Cities (Overlay)
+
+Attribution
+-----------
+
+OpenWeatherMap layers come from http://www.openweathermap.org, if you make use of OWM layers please visit their site for support and
+information regarding usage terms.
 
 
 License
