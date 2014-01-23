@@ -19,6 +19,7 @@ Gina.layerHandlers = {
       url = url.replace('${x}', x);
       url = url.replace('${y}', coord.y);
       url = url.replace('${z}', zoom);
+      url = url.replace('${s}', 0)
       
       return url + '.png';
     };

@@ -59,6 +59,8 @@ Gina.layerHandlers = {
         url = url.replace('${x}', col);
         url = url.replace('${y}', row);
         url = url.replace('${z}', level);
+        url = url.replace('${s}', 0)
+        
         return url;
     }
     });

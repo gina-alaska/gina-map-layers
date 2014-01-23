@@ -10,6 +10,8 @@ Gina.layerHandlers = {
       url = url.replace('${x}', tile.x);
       url = url.replace('${y}', tile.y);
       url = url.replace('${z}', tile.levelOfDetail);
+      url = url.replace('${s}', 0)
+      
       
       return url + ".png"
     }

@@ -3,7 +3,7 @@ Gina.layerHandlers = {
     return map.addLayer(layer, true);
   },
   tile: function(params) {
-    var url = params.url.replace("${x}", "{x}").replace("${y}", "{y}").replace("${z}", "{z}");
+    var url = params.url.replace("${x}", "{x}").replace("${y}", "{y}").replace("${z}", "{z}").replace("${s}", "{s}");
     return L.tileLayer(url, params.layerOptions);
   },
   wms: function(params) {

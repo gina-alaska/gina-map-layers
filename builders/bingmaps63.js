@@ -11,6 +11,8 @@ Gina.layerHandlers = {
       url = url.replace('${x}', tileContext.XPos);
       url = url.replace('${y}', tileContext.YPos);
       url = url.replace('${z}', tileContext.ZoomLevel);
+      url = url.replace('${s}', 0)
+      
       
       return url + ".png"
     }
