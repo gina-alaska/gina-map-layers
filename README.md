@@ -23,7 +23,7 @@ Using bower:
     
 Download zip:
 
-    https://github.com/gina-alaska/gina-map-layers/releases/tag/1.0.2
+    https://github.com/gina-alaska/gina-map-layers/releases/tag/1.0.3
     
 Clone from github
 

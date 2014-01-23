@@ -278,6 +278,25 @@ Gina.Layers.define('TILE.EPSG:3338.OSM_OVERLAY', {
     isBaseLayer: false,
     attribution: '(c) <a href="http://www.openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>'
   }
+});/* Layers from http://openweathermap.org/ */
+
+/**
+ * Name: TILE.EPSG:3857.OWM_CLOUDS
+ * Projection: EPSG:3338 Alaskan Albers
+ * OpenStreetMap Baselayer in Alaskan Albers Projection
+ */
+Gina.Layers.define('TILE.EPSG:3857.OWM_CLOUDS', {
+  name: 'OpenWeatherMap Clouds',
+  type: Gina.Layers.Types.TILE,
+  url: 'http://tile.openweathermap.org/map/clouds/${z}/${x}/${y}.png',
+  layerOptions: {
+    type: 'png',
+    transitionEffect: 'resize',
+    wrapDateLine: true,
+    visibility: false,
+    isBaseLayer: true,
+    attribution: '(c) <a href="http://www.openweathermap.org">Map data &copy; OpenWeatherMap</a>'
+  }
 });/**
  * Name: TILE.EPSG:3857.SHADEDRELIEF
  * Projection: EPSG:3857 Google Mercator Projection

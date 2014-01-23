@@ -8,6 +8,13 @@ class Build < Thor
   include Thor::Actions
   include Thor::Shell
   
+  desc 'all', 'Build all files'
+  def all
+    invoke :projections
+    invoke :layers
+    invoke :gina
+  end
+  
   desc 'layers', 'Build all.js file for layers'
   def layers
     layers = ""    
@@ -39,11 +46,8 @@ class Build < Thor
   end
 
   no_tasks do
-    def build_gina_blob(builder)
-      layers = ""    
-      each_layer { |file| layers += File.read(file) }
-      
-      create_file "adapters/#{builder}.js", file_header + File.read('src/gina.js') + layers + File.read("builders/#{builder}.js")
+    def build_gina_blob(builder)      
+      create_file "adapters/#{builder}.js", file_header + File.read('src/gina.js') + File.read('layers/all.js') + File.read("builders/#{builder}.js")
       create_file "adapters/#{builder}.min.js", Uglifier.compile(File.read("adapters/#{builder}.js"))
     end
     
