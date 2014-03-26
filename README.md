@@ -131,26 +131,26 @@ TILE.EPSG:3857.OWM_WIND           OpenWeatherMap Wind Speed
 TILE.EPSG:3857.OWM_PRESSURE       OpenWeatherMap Pressure
 TILE.EPSG:3857.OWM_PRESSURE_CNTR  OpenWeatherMap Pressure Contours -->
     
-  <!-- Projection EPSG:3338 - Alaskan Albers (OpenLayers)
+<!-- Projection EPSG:3338 - Alaskan Albers (OpenLayers)
 
-    Layer ID                        Name
-    ------------------------------  ---------------------------------
-    TILE.EPSG:3338.BDL              GINA Best Data Layer
-    TILE.EPSG:3338.TOPO             USGS Topographic DRG
-    TILE.EPSG:3338.SHADED_RELIEF    GINA Shaded Relief (NED)
-    TILE.EPSG:3338.OSM              OpenStreetMaps Base Layer
-    TILE.EPSG:3338.OSM_OVERLAY      OpenStreetMaps Roads & Cities (Overlay)
-    TILE.EPSG:3338.ORTHO_RGB        Alaska Ortho Project Natural Color (Overlay)
-    TILE.EPSG:3338.ORTHO_CIR        Alaska Ortho Project Color Infrared (Overlay)
-    TILE.EPSG:3338.ORTHO_GS         Alaska Ortho Project Grayscale (Overlay)
-    
-  Projection EPSG:3572 - Alaskan Centric Polar Projection (OpenLayers)
+  Layer ID                        Name
+  ------------------------------  ---------------------------------
+  TILE.EPSG:3338.BDL              GINA Best Data Layer
+  TILE.EPSG:3338.TOPO             USGS Topographic DRG
+  TILE.EPSG:3338.SHADED_RELIEF    GINA Shaded Relief (NED)
+  TILE.EPSG:3338.OSM              OpenStreetMaps Base Layer
+  TILE.EPSG:3338.OSM_OVERLAY      OpenStreetMaps Roads & Cities (Overlay)
+  TILE.EPSG:3338.ORTHO_RGB        Alaska Ortho Project Natural Color (Overlay)
+  TILE.EPSG:3338.ORTHO_CIR        Alaska Ortho Project Color Infrared (Overlay)
+  TILE.EPSG:3338.ORTHO_GS         Alaska Ortho Project Grayscale (Overlay)
+  
+Projection EPSG:3572 - Alaskan Centric Polar Projection (OpenLayers)
 
-    Layer ID                        Name
-    ------------------------------  ---------------------------------
-    TILE.EPSG:3572.BDL              GINA Best Data Layer
-    TILE.EPSG:3572.OSM              OpenStreetMaps Base Layer
-    TILE.EPSG:3572.OSM_OVERLAY      OpenStreetMaps Roads & Cities (Overlay) -->
+  Layer ID                        Name
+  ------------------------------  ---------------------------------
+  TILE.EPSG:3572.BDL              GINA Best Data Layer
+  TILE.EPSG:3572.OSM              OpenStreetMaps Base Layer
+  TILE.EPSG:3572.OSM_OVERLAY      OpenStreetMaps Roads & Cities (Overlay) -->
 
 Attribution
 -----------
