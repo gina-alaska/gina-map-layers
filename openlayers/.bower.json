@@ -1,0 +1,14 @@
+{
+  "name": "OpenLayers-2.13.1.tar",
+  "_cacheHeaders": {
+    "ETag": "\"9869c1-a21000-4e110d5d3da80\"",
+    "Last-Modified": "Tue, 09 Jul 2013 09:32:10 GMT",
+    "Content-Length": "10620928",
+    "Content-Type": "application/x-gzip"
+  },
+  "_release": "e-tag:9869c1-a2",
+  "_source": "http://openlayers.org/download/OpenLayers-2.13.1.tar.gz",
+  "_target": "*",
+  "_originalSource": "http://openlayers.org/download/OpenLayers-2.13.1.tar.gz",
+  "_direct": true
+}
