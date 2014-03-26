@@ -2,7 +2,7 @@
 (function() {
   Gina.Layers.return_by_name = false;
 
-  Gina.Layers.tileLayer = function(tilejson) {
+  Gina.Layers.tile_layer = function(tilejson) {
     var params, regexp;
     regexp = /{([sxyz])}/g;
     params = tilejson;

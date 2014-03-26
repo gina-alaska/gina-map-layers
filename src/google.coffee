@@ -1,6 +1,6 @@
 Gina.Layers.return_by_name = false
 
-Gina.Layers.tileLayer = (tilejson) ->
+Gina.Layers.tile_layer = (tilejson) ->
   regexp = /{([sxyz])}/g
 
   params = tilejson

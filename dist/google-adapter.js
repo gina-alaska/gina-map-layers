@@ -42,7 +42,7 @@
 
     Layers.return_by_name = true;
 
-    Layers.tileLayer = function() {
+    Layers.tile_layer = function(tilejson) {
       return console.log('This should be reimplemented by the appropriate adapter!');
     };
 
@@ -67,7 +67,7 @@
       _ref = Gina.Definitions.find(partial_name);
       for (_i = 0, _len = _ref.length; _i < _len; _i++) {
         layer = _ref[_i];
-        layers.push(Layers.tileLayer(layer));
+        layers.push(Layers.tile_layer(layer));
       }
       return layers;
     };
@@ -78,13 +78,13 @@
       _ref = Gina.Definitions.find(partial_name);
       for (_i = 0, _len = _ref.length; _i < _len; _i++) {
         layer = _ref[_i];
-        layers[layer.name] = Layers.tileLayer(layer);
+        layers[layer.name] = Layers.tile_layer(layer);
       }
       return layers;
     };
 
     Layers.get = function(layer_name) {
-      return Layers.tileLayer(Gina.Definitions.get(layer_name));
+      return Layers.tile_layer(Gina.Definitions.get(layer_name));
     };
 
     return Layers;
@@ -131,7 +131,7 @@
 (function() {
   Gina.Layers.return_by_name = false;
 
-  Gina.Layers.tileLayer = function(tilejson) {
+  Gina.Layers.tile_layer = function(tilejson) {
     var params, regexp;
     regexp = /{([sxyz])}/g;
     params = tilejson;

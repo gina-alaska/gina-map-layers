@@ -3,7 +3,7 @@ class @Gina
 class @Gina.Layers
   @return_by_name: true
 
-  @tileLayer: () =>
+  @tile_layer: (tilejson) =>
     console.log 'This should be reimplemented by the appropriate adapter!'
 
   @define: (name, tilejson) =>
@@ -19,7 +19,7 @@ class @Gina.Layers
   @find_without_name: (partial_name) =>
     layers = []
     for layer in Gina.Definitions.find(partial_name)
-      layers.push(@tileLayer(layer))
+      layers.push(@tile_layer(layer))
 
     layers
 
@@ -27,12 +27,12 @@ class @Gina.Layers
   @find_with_name: (partial_name) =>
     layers = {}
     for layer in Gina.Definitions.find(partial_name)
-      layers[layer.name] = @tileLayer(layer)
+      layers[layer.name] = @tile_layer(layer)
 
     layers
 
   @get: (layer_name) =>
-    @tileLayer(Gina.Definitions.get(layer_name))
+    @tile_layer(Gina.Definitions.get(layer_name))
 
 class @Gina.Definitions
   @defs: {}
