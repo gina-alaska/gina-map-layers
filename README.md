@@ -5,7 +5,7 @@ GINA Map Layers JS Library - V2
 
 This project is a library used to find and add map layer into web maps.
 
-Examples can be found at http://github.com/gina-alaska/gina-map-layers-examples
+Examples can be found at http://gina-alaska.github.io/gina-map-layers
 
 Supported Web Map APIs
 ----------------------
