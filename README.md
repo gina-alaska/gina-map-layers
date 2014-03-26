@@ -1,4 +1,4 @@
-GINA Map Layers Javascript Library - Version 2
+GINA Map Layers JS Library - V2
 ==================================
 
 *NOTE* This is a complete rewrite and not all features from 1.x are currently supported.  The main feature that is missing is support for projections other than web mercator.  This is still pending and in the mean time you can use the old version of the library from here https://github.com/gina-alaska/gina-map-layers/tree/1.x
