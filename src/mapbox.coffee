@@ -1,0 +1,1 @@
+@Gina.Layers.tileLayer = L.mapbox.tileLayer
