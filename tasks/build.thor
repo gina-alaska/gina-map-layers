@@ -8,7 +8,7 @@ class Build < Thor
   include Thor::Actions
   include Thor::Shell
   
-  ADAPTERS = %w{ google openlayers leaflet mapbox }
+  ADAPTERS = %w{ base google openlayers leaflet mapbox }
   
   desc 'all', 'Build all files'
   def all
