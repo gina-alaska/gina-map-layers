@@ -8,7 +8,7 @@ class Build < Thor
   include Thor::Actions
   include Thor::Shell
   
-  ADAPTERS = %w{ base google openlayers leaflet mapbox }
+  ADAPTERS = %w{ google openlayers leaflet mapbox }
   
   desc 'all', 'Build all files'
   def all
@@ -33,6 +33,7 @@ Gina.Layers.define('TILE.#{projection}.#{File.basename(file, '.*').upcase}', #{F
   def gina
     `coffee --compile --output build/ src/`
     
+    build_base_adapter()
     ADAPTERS.each do |adapter|
       build_gina_blob(adapter)
     end
@@ -51,6 +52,11 @@ Gina.Layers.define('TILE.#{projection}.#{File.basename(file, '.*').upcase}', #{F
   end
 
   no_tasks do
+    def build_base_adapter()
+      create_file "dist/base-adapter.js", file_header + File.read('build/base.js') + File.read('layers/all.js')
+      create_file "dist/base-adapter.min.js", Uglifier.compile(File.read("dist/base-adapter.js"))
+    end
+    
     def build_gina_blob(builder)      
       create_file "dist/#{builder}-adapter.js", file_header + File.read('build/base.js') + File.read("build/#{builder}.js") + File.read('layers/all.js')
       create_file "dist/#{builder}-adapter.min.js", Uglifier.compile(File.read("dist/#{builder}-adapter.js"))
